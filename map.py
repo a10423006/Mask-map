@@ -3,12 +3,12 @@ import folium
 import pandas
 
 # 口罩資料
-data = pandas.read_csv('maskdata.csv').loc[0:9]
+data = pandas.read_csv('maskdata.csv').loc[0:29]
 pos_list = pandas.read_csv('pos_list.csv')
 
 #%%
 # 建立地圖並設置初始位置
-m = folium.Map((25.0133904,121.52245), tiles="Stamen Terrain",zoom_start=14)
+m = folium.Map((23.583234,120.5825975), tiles="Stamen Terrain",zoom_start=7)
 
 # 口罩資訊標記建立
 for i in range(0, len(pos_list)):
@@ -20,7 +20,7 @@ for i in range(0, len(pos_list)):
               "兒童口罩剩餘數: " + str(data['兒童口罩剩餘數'][i]) + "<br>" + \
               "來源資料時間: " + data['來源資料時間'][i]
     folium.Marker(
-        location=pos_list[i],
+        location=eval(pos_list['經緯度'][i]),
         tooltip=folium.Tooltip(text=tip_str),
         # 點擊後資訊(未來可放圖表)
         #popup=folium.Popup(html=tip_str ,max_width=200).add_child(folium.Vega(vis1, width=450, height=250)),
