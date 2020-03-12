@@ -12,8 +12,7 @@
 pip install folium
 ```
 
-<iframe src="https://a10423006.github.io/Mask_map/map.html">
-</iframe>
+<img width="90%" heigth="90%" src="https://github.com/a10423006/Mask_map/blob/master/image/website.png">
 
 
 
